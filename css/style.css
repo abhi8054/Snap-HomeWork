@@ -1,0 +1,108 @@
+.myimg {
+    height: 100vh;
+}
+
+#form {
+    margin-top: 40px;
+    background-color: rgba(24, 23, 23, 0);
+    border-radius: 50px;
+    border: 1px solid #1D1A21FF;
+    box-shadow: 5px 10px 18px #0aa21a;
+}
+
+#form1 {
+    margin-top: 40px;
+    background-color: rgba(24, 23, 23, 0);
+    border-radius: 50px;
+    border: 1px solid #1D1A21FF;
+    box-shadow: 5px 10px 18px #0077ff;
+}
+
+#form2 {
+    margin-top: 40px;
+    background-color: rgba(24, 23, 23, 0);
+    border-radius: 50px;
+    border: 1px solid #1D1A21FF;
+    box-shadow: 5px 10px 18px #ffb700;
+}
+
+.container .row #h2 {
+    margin-top: 20px;
+    color: greenyellow;
+}
+
+.container .row #hd {
+    margin-top: 20px;
+    color: greenyellow;
+}
+
+.container .row #hd1 {
+    margin-top: 20px;
+    color: greenyellow;
+}
+
+
+#forgot {
+    border-radius: 50px;
+    color: green;
+    border: 1px solid #1a1e21;
+    box-shadow: 5px 10px 18px #888888;
+}
+
+#h1 {
+    color: red;
+}
+
+.cimg {
+    height: 255px;
+}
+
+.backimg {
+    background-image: url("../images/logo1.png");
+}
+
+/*admin home*/
+
+#abody {
+    background-image: linear-gradient(rgba(239, 10, 10, 0.5),rgba(24,23,23,0.5)),url("../images/s1.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.5;*/
+    height: 100vh;
+}
+#ah1{
+    color:white;
+    font-size: 40px;
+}
+
+
+/*teacher*/
+#tbody {
+    background-image: linear-gradient(rgba(24,23,23,0.5) ,rgba(24,23,23,0.5)),url("../images/ban11.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.2;*/
+    height: 100vh;
+}
+
+/*student*/
+#sbody {
+    background-image: linear-gradient(rgba(24,23,23,0.5) ,rgba(24,23,23,0.5)),url("../images/cimg2.jpeg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*opacity: 0.2;*/
+    height: 100vh;
+}
+
+/*------------------------------------------------------------------*/
+@media screen and (max-width: 850px) {
+    .row.primary {
+        grid-template-columns: 1fr;
+    }
+    .row.secondary {
+        flex-direction: column;
+    }
+}
