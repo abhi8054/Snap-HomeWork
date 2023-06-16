@@ -47,7 +47,7 @@ session_start();
         <div class="col-md-5">
             <div class="mb-3">
                 <label for="courseselect" class="form-label">Select Course</label>
-                <select name="course" class="form-select text-info bg-transparent" onchange="getsubject(this.value)"
+                <select name="course" class="form-select text-info bg-transparent" onchange="getSubject(this.value)"
                         aria-label="Default select example" id="courseselect">
                     <option class="bg-dark" value="">Select Course</option>
                     <?php
@@ -109,7 +109,7 @@ session_start();
 
 
 <script>
-    function getsubject(subject) {
+    function getSubject(subject) {
         let httpRequest = new XMLHttpRequest();
         httpRequest.open('GET', 'cascadedata2.php?coursename=' + subject + '&option=select', true);
         httpRequest.send();

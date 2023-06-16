@@ -11,10 +11,10 @@ if($email == ""){
     $mail->Port = 587;
     $mail->isSMTP();
     $mail->SMTPAuth = true;
-    $mail->SMTPSecure = 'tls';
+    // $mail->SMTPSecure = 'tls';
 
     $mail->Username = 'abhishek.kp6239@gmail.com';//Your Email Address
-    $mail->Password = 'Poddar123@abhipoddar';//Your Email Password
+    $mail->Password = 'auaqeitsexxzmkqw';//Your Email Password
     $mail->setFrom('abhishek.kp6239@gmail.com', 'Snap Homework');
 
     $mail->addAddress($email);//Receiver Email

@@ -1,3 +1,4 @@
+
 <?php
 
 
@@ -14,10 +15,13 @@ switch ($task) {
         $subname = $_POST['subjectname'];
         $subdesc = $_POST['description'];
         $subsem= $_POST['semester'];
+
         include_once "partialpage/connection.php";
 
-        $add_subject = "INSERT INTO `subject`(`coursename`, `subname`, `subdesc`,`subsem`) VALUES('$course', '$subname', '$subdesc')";
+        $add_subject = "INSERT INTO `subject`(`coursename`, `subname`, `subdesc`,`subsem`) VALUES('$course', '$subname', '$subdesc','$subsem')";
+
         $execute1 = mysqli_query($conn, $add_subject);
+        print_r( $execute1);
         if ($execute1) {
             echo "<script>alert('Subject Added Successfully');
                    window.location.href='subjectadd.php';
@@ -53,7 +57,7 @@ switch ($task) {
 
     case 'updatesubject':
 
-        $subid1 = $_POST['subid'];
+        $subjectid1 = $_POST['subid'];
         $course_name = $_POST['coursename'];
         $subject_name = $_POST['subjectname'];
         $subject_desc = $_POST['description'];
@@ -61,7 +65,7 @@ switch ($task) {
 
         include_once "partialpage/connection.php";
 
-        $up_sql = "UPDATE `subject` SET `subname`='$subject_name',`subdesc`='$subject_desc',`coursename` = '$course_name',`subsem`='$subsem' WHERE subid = '$subid1'";
+        $up_sql = "UPDATE `subject` SET `subname`='$subject_name',`subdesc`='$subject_desc',`coursename` = '$course_name',`subsem`='$subsem' WHERE subid = '$subjectid1'";
         $execute3 = mysqli_query($conn, $up_sql);
         if ($execute3) {
             echo "<script>alert('Subject Updated Successfully');

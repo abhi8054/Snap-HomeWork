@@ -53,7 +53,6 @@ session_start();
                     $execute1 = mysqli_query($conn, $sel_course);
                     while ($res = mysqli_fetch_array($execute1)) {
                         echo "<option class='bg-dark' value='$res[0]'> $res[0]</option>";
-                        print_r($res[1]);
                     }
                     ?>
                 </select>

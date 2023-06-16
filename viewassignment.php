@@ -90,7 +90,13 @@ session_start();
                     <?php
                 }
             }else{
-                echo "<script>window.location.href='teacherhome.php';</script>";
+                ?>
+                <tr>
+                    <td colspan='10'>
+                        <h1 class='text-info text-center mt-5 mb-5'>No Record Found.......</h1>
+                    </td>
+                </tr>
+                <?php
             }
             ?>
             </tbody>

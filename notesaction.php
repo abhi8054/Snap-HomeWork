@@ -20,7 +20,7 @@ switch ($task) {
                   window.location.href='addnotes.php';
                    </script>";
         } else {
-            move_uploaded_file($path_tmp, "photouploads/$path_org");
+            move_uploaded_file($path_tmp, "pdfuploads/$path_org");
 
             include_once "partialpage/connection.php";
 
@@ -33,7 +33,7 @@ switch ($task) {
                    </script>";
             } else {
                 echo "<script>alert('Notes Added Failed');
-                  window.location.href='addnotes.php';
+//                  window.location.href='addnotes.php';
                    </script>";
             }
         }
@@ -56,7 +56,7 @@ switch ($task) {
             $pres=mysqli_fetch_array($done);
             $path_org=substr($pres[0],13);
         }else{
-            move_uploaded_file($path_temp, "photouploads/$path_org");
+            move_uploaded_file($path_temp, "pdfuploads/$path_org");
         }
         include_once "partialpage/connection.php";
 

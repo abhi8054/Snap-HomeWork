@@ -7,15 +7,16 @@ switch ($task) {
         $sid = $_SESSION['studentid'];
         $sname = $_POST['name'];
         $srol = $_POST['rollno'];
-        $sem = $_POST['semester'];
         $suid = $_POST['subject'];
-        $course = $_POST['coursename'];
         $assign = $_POST['assign'];
         $astatus = 1;
         include_once "partialpage/connection.php";
-        $s = "SELECT studentroll FROM student WHERE studentroll = '$srol' AND studentname='$sname'";
+        $s = "SELECT studentroll,studentsem,coursename FROM student WHERE studentroll = '$srol' AND studentname='$sname'";
         $r = mysqli_query($conn, $s);
+        $resStu = mysqli_fetch_row($r);
         $res = mysqli_num_rows($r);
+        $course = $resStu[2];
+        $sem = $resStu[1];
         if ($res) {
             $temail = $_POST['email'];
             $s1 = "SELECT teacheremail ,teacherid FROM teacher WHERE teacheremail='$temail'";
@@ -33,7 +34,7 @@ switch ($task) {
                 $mail->SMTPSecure = 'tls';
 
                 $mail->Username = 'abhishek.kp6239@gmail.com';//Your Email Address
-                $mail->Password = 'Poddar123@abhipoddar';//Your Email Password
+                $mail->Password = 'aphjpzbqmdjopkso';//Your Email Password
                 $mail->setFrom('abhishek.kp6239@gmail.com', 'Snap Homework');
 
                 $mail->addAddress($temail);//Receiver Email
@@ -61,16 +62,17 @@ switch ($task) {
                         include_once "partialpage/connection.php";
                         $sql = "INSERT INTO `upassign`(`subid`, `teacherid`, `studentid`, `coursename`, `assignpath`, `assignstatus`, `assignsem`, `sturoll`,`assignmentid` )
                             VALUES ('$suid','$row[1]','$sid','$course','photouploads/$opath','$astatus','$sem','$srol','$assign')";
-                        $result = mysqli_query($conn, $sql);
-                        if ($result) {
-                            echo "<script>alert('Assignment Uploaded Successfully');
-                  window.location.href='assignmentupload.php';
-                   </script>";
-                        } else {
-                            echo "<script>alert('Assignment Uploaded Failed');
-                  window.location.href='assignmentupload.php';
-                   </script>";
-                        }
+                            $result = mysqli_query($conn, $sql);
+                            if ($result) {
+                                echo "<script>alert('Assignment Uploaded Successfully');
+                                    window.location.href='assignmentupload.php';
+                                     </script>";
+                            } else {
+                                echo "<script>
+                                    alert('Assignment Uploaded Failed');
+                                    window.location.href='assignmentupload.php';
+                                    </script>";
+                            }
                     }
                 }
             } else {

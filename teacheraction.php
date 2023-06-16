@@ -33,12 +33,13 @@ switch ($task) {
         $course = $_POST['coursename'];
 
         $subjectarr = $_POST['subject'];
+        var_dump($subjectarr);
         $subject = implode(", ", $subjectarr);
 
         $path_temp = $_FILES['photo']['tmp_name'];
         $path_org = $_FILES['photo']['name'];
         $extension = strtolower(pathinfo($path_org, PATHINFO_EXTENSION));
-//        $size = round($_FILES['photo']['size'] / 1024, 2);
+////        $size = round($_FILES['photo']['size'] / 1024, 2);
 
         if ($extension != 'png' && $extension != 'jpg') {
             echo "<script>alert('Suppoted only png or jpg file');
@@ -59,7 +60,7 @@ switch ($task) {
             $mail->SMTPSecure = 'tls';
 
             $mail->Username = 'abhishek.kp6239@gmail.com';//Your Email Address
-            $mail->Password = 'Poddar123@abhipoddar';//Your Email Password
+            $mail->Password = 'qjbdzuskepkbscww';//Your Email Password
             $mail->setFrom('abhishek.kp6239@gmail.com', 'Snap Homework');
 
             $mail->addAddress($email);//Receiver Email

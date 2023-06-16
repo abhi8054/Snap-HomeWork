@@ -55,7 +55,7 @@ session_start();
             <div class="col-md-5">
                 <div class="mb-3">
                     <label for="courseselect" class="form-label">Select Subject</label>
-                    <select name="subject" class="form-select text-light bg-transparent" onchange="getsub1(this.value)"
+                    <select name="subject" class="form-select text-light bg-transparent" onchange="getSub1(this.value)"
                             aria-label="Default select example" id="courseselect">
                         <option class="bg-dark" value="">Select Subject</option>
                         <?php
@@ -115,7 +115,7 @@ session_start();
     let sem =" <?php echo $row[1]; ?> ";
     let sub = "";
 
-    function getsub1(sub_ject) {
+    function getSub1(sub_ject) {
         sub = sub_ject;
         // alert(sub);
         getassign(sub);

@@ -20,10 +20,10 @@ session_start();
         padding-bottom: 3px;
         border-bottom: 2px solid yellow;
     }
+
 </style>
 </head>
 <body id="abody">
-
 <?php
 include_once "partialpage/adminnavbar.php";
 ?>
@@ -37,8 +37,14 @@ include_once "partialpage/adminnavbar.php";
 
 </div>
 </div>
+
 <?php
 include_once "partialpage/files.php";
 ?>
+<script>
+    function loading(){
+        document.getElementById("load").style.display="none";
+    }
+</script>
 </body>
 </html>

@@ -90,6 +90,7 @@ switch ($task) {
         include_once "partialpage/connection.php";
         $s = "select assignment.*,subject.subname from assignment inner join subject ON assignment.subid=subject.subid where assignment.coursename = '$row[0]' AND subject.subname='$sub'";
         $e = mysqli_query($conn, $s);
+//        print_r($e);
         $rst=mysqli_num_rows($e);
 //        print_r($res = mysqli_fetch_array($e));
         if ($rst !=0) {

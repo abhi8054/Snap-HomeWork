@@ -1,7 +1,7 @@
 
 
 <footer style="background-color: #1a1e218a; margin-top:15px; color: #ffffff; font-size: 16px; box-sizing: border-box; border: none; outline: none;">
-    <div style="padding: 2em 1em;display: grid; grid-template-columns: 2fr 1fr 2fr; align-items: stretch;">
+    <div id="footer" style="padding: 2em 1em;display: grid; grid-template-columns: 2fr 1fr 2fr; align-items: stretch;">
         <div class=" about" style="width: 100%; display: flex; flex-direction: column; padding: 0 2em; min-height: 15em;">
             <h3 style="width: 100%; text-align: left; color: #2a8ded; font-size: 1.6em; white-space: nowrap;"><img src="images/snap_logo_big.png" height="40px" width="60px"> &nbsp; Snap HomeWork</h3>
             <p style="text-align: justify; line-height: 2; margin: 0;">
@@ -37,7 +37,7 @@
 <!--            <form action="emailaction.php" method="get" >-->
             <div>
                 <input style="font-size: 1em; color:white; background: transparent; padding: 1em; width: 100%; border-radius: 5px; margin-bottom: 10px;" type="email" placeholder="Your email id here" id="getemail" />
-                <button style=" background-color: #2a8ded; color: #ffffff; font-size: 1em; padding: 1em; width: 100%; border-radius: 5px; margin-bottom: 5px;" type="submit" onclick="subscribe()">Subscribe</button>
+                <button id="disbutton" style=" background-color: #2a8ded; color: #ffffff; font-size: 1em; padding: 1em; width: 100%; border-radius: 5px; margin-bottom: 5px;" type="submit" onclick="subscribe()">Subscribe</button>
             </div>
 <!--            </form>-->
             <div style="display: flex; justify-content: space-around;font-size: 2.4em;flex-direction: row;margin-top: 0.5em;">
@@ -47,7 +47,7 @@
             </div>
         </div>
     </div>
-    <div style=" padding: 2em 1em; display: flex;justify-content:  space-around; align-items:center;text-align: center;">
+    <div class="contact" style=" padding: 2em 1em; display: flex;justify-content:  space-around; align-items:center;text-align: center;">
         <div style="padding: 1em 0;width: 100%;">
             <p>
                 <i style="font-size: 1.8em;color: #2a8ded;" class="fas fa-phone-alt"></i>
@@ -64,24 +64,22 @@
         </div>
     </div>
     <div style=" padding: 2em 1em;background-color: #25262e;">
-        <p style="font-size: 0.9em;text-align: center;" >Copyright &copy; 2021 Snap HomeWork | All Rights Reserved</p>
+        <p style="font-size: 0.9em;text-align: center;" >Copyright &copy; 2023 Snap HomeWork | All Rights Reserved</p>
     </div>
 </footer>
 
 <script>
 
-    // let email = document.getElementById("getemail").value;
-    // alert(email);
+
     function subscribe() {
+        var disBtn = document.getElementById("disbutton")
         let email = document.getElementById("getemail").value;
         let newEmail=email.toString();
         let httpRequest = new XMLHttpRequest();
         httpRequest.open('GET', 'emailaction.php?emailrec='+newEmail, true);
         httpRequest.send();
         httpRequest.onreadystatechange = function () {
-            // alert("sending");
             if (this.readyState === 4 && this.status === 200) {
-                // document.getElementById('assign').innerHTML = this.response;
                 alert(this.response);
             }
         }

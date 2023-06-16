@@ -17,7 +17,7 @@ switch ($task) {
             $_SESSION['adminuser'] = $username;
             $_SESSION['password']=$password;
             $_SESSION['email']=$res[2];
-            echo "<script>alert('Login Successful');
+            echo "<script>
                     window.location.href='adminhome.php';
                     </script>";
         } else {

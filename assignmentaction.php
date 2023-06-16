@@ -1,6 +1,7 @@
 <?php
 session_start();
 $task=$_POST['action'];
+echo $task;
 switch ($task){
 
     case'addassignment':
@@ -21,12 +22,12 @@ switch ($task){
                   window.location.href='addassignment.php';
                    </script>";
         }else{
-            move_uploaded_file($path_tmp, "photouploads/$path_org");
+            move_uploaded_file($path_tmp, "pdfuploads/$path_org");
 
             include_once "partialpage/connection.php";
 
             $add_assignment = "INSERT INTO `assignment`(`assignmenttopic`, `assignmentdesc`, `assignmentfile`, `subid`, `teacherid`, `uploaddate`, `lastdate`,`coursename`,`assignmentsem`)
-                    VALUES ('$topic','$assdesc','photouploads/$path_org','$stuid','$teacherid','$uploaddate','$lastdate','$course','$sem')";
+                    VALUES ('$topic','$assdesc','pdfuploads/$path_org','$stuid','$teacherid','$uploaddate','$lastdate','$course','$sem')";
 //            echo $add_assignment;
             $execute1 = mysqli_query($conn, $add_assignment);
             if ($execute1) {
@@ -79,7 +80,7 @@ switch ($task){
             $pres=mysqli_fetch_array($done);
             $path_org=substr($pres[0],13);
         }else{
-            move_uploaded_file($path_temp, "photouploads/$path_org");
+            move_uploaded_file($path_temp, "pdfuploads/$path_org");
         }
         include_once "partialpage/connection.php";
 

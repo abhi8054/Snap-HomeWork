@@ -36,7 +36,7 @@ switch ($task) {
         $extension = strtolower(pathinfo($path_org, PATHINFO_EXTENSION));
         $size = round($_FILES['photo']['size'] / 1024, 2);
 
-        if ($extension != 'png' && $extension != 'jpg') {
+        if ($extension != 'png' && $extension != 'jpg' && $extension != 'jpeg' ) {
             echo "<script>alert('Suppoted only png or jpg file');
                    </script>";
         } else {
@@ -53,7 +53,7 @@ switch ($task) {
             $mail->SMTPSecure = 'tls';
 
             $mail->Username = 'abhishek.kp6239@gmail.com';//Your Email Address
-            $mail->Password = 'Poddar123@abhipoddar';//Your Email Password
+            $mail->Password = 'aphjpzbqmdjopkso';//Your Email Password
             $mail->setFrom('abhishek.kp6239@gmail.com', 'Snap Homework');
 
             $mail->addAddress($email);//Receiver Email
@@ -152,7 +152,7 @@ switch ($task) {
                     WHERE `studentid` = '$studentid'";
 //        print_r($up_sql);
         $execute3 = mysqli_query($conn, $up_sql);
-        print_r($execute3);
+//        print_r($execute3);
         if ($execute3) {
             echo "<script>alert('Student Updated Successfully');
                    window.location.href='studentview.php';

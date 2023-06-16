@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 $task = $_POST['action'];
 switch ($task){
     case'login':

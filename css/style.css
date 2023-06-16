@@ -41,6 +41,16 @@
     color: greenyellow;
 }
 
+#load{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    background:url("../images/ben-redblock-loading.gif") ;
+    font-size: 300px;
+    z-index: 9999;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
 
 #forgot {
     border-radius: 50px;
@@ -68,7 +78,6 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    /*opacity: 0.5;*/
     height: 100vh;
 }
 #ah1{
@@ -105,4 +114,23 @@
     .row.secondary {
         flex-direction: column;
     }
+}
+
+@media screen and (max-width:900px){
+    #footer{
+        padding: 1em 0 !important;
+    }
+}
+@media screen and (max-width:770px){
+    #footer{
+        grid-template-columns:1fr !important;
+    }
+    .about,.links{
+        min-height: 12em !important;
+    }
+
+    .contact{
+        flex-direction: column !important;
+    }
+
 }

@@ -1,6 +1,7 @@
 <?php
 
-$conn=mysqli_connect("localhost","root",null,"snaphomework");
+$conn=mysqli_connect("localhost","root",null,"snaphomework",3366);
+
 if(!$conn){
     $error=mysqli_connect_error();
     echo"<script>alert(\"connection fail\")</script>";

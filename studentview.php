@@ -105,7 +105,7 @@ if(!isset($_SESSION['username']) && !isset($_SESSION['password'])){
                             $row=mysqli_fetch_array($exe);
                             if((int)$row[0]===1){
                                 ?>
-                                <button  type='submit' name="action" value="block" onclick="changeColor()" class='btn btn-danger bg-transparent text-danger' style='text-align: center;padding: 10px 20px;border-radius: 20px'><i class='fas fa-ban'></i> Block </button>
+                                <button  type='submit' name="action" value="block"  class='btn btn-danger bg-transparent text-danger' style='text-align: center;padding: 10px 20px;border-radius: 20px'><i class='fas fa-ban'></i> Block </button>
                                 <input type="hidden" name="status" value="<?php echo $st; ?>">
                             <?php } else{ ?>
                                 <button  type='submit' name="action" value="active" class='btn btn-success bg-transparent text-success' style='text-align: center;padding: 10px 20px;border-radius: 20px'><i class='fas fa-check-circle'></i> Active </button>
